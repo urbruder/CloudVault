@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary: #4285F4;
+    --color-primary-hover: #3367D6;
+    --color-primary-fixed: #E8F0FE;
+    --color-primary-fixed-dim: #adc6ff;
+    --color-primary-container: #2771df;
+    
+    --color-secondary: #5846c8;
+    --color-secondary-accent: #8B7CFF;
+    --color-secondary-fixed: #e4dfff;
+    --color-secondary-container: #7161e3;
+    
+    --color-tertiary: #188038;
+    --color-tertiary-fixed: #E6F4EA;
+    --color-tertiary-container: #20863d;
+    
+    --color-warning: #F9AB00;
+    --color-warning-fixed: #FEF7E0;
+    
+    --color-error: #D93025;
+    --color-error-fixed: #FCE8E6;
+    --color-error-container: #ffdad6;
+    
+    --color-background: #F8FAFD;
+    --color-surface: #FFFFFF;
+    --color-surface-container-low: #F4F3F7;
+    --color-surface-container: #EFEDF1;
+    --color-surface-container-high: #E9E7EB;
+    --color-surface-container-highest: #E3E2E6;
+    
+    --color-on-surface: #202124;
+    --color-on-surface-variant: #5F6368;
+    --color-outline: #727785;
+    --color-outline-variant: #DADCE0;
+    --color-divider: #E8EAED;
+  }
+
+  .dark {
+    --color-background: #131314;
+    --color-surface: #1e1f20;
+    --color-surface-container-low: #282a2c;
+    --color-surface-container: #2d2f31;
+    --color-surface-container-high: #37393b;
+    --color-surface-container-highest: #444746;
+    
+    --color-on-surface: #e3e3e3;
+    --color-on-surface-variant: #c4c7c5;
+    --color-outline: #8e918f;
+    --color-outline-variant: #444746;
+    --color-divider: #36373a;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3, .font-heading {
+  font-family: var(--font-space-grotesk), var(--font-inter), sans-serif;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.35);
+}
+
